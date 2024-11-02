@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracking System</title>
+    <link rel="stylesheet" href="firstcss.css">
+</head>
+<body>
+    <header>
+        <h1>Time Tracking System</h1>
+    </header>
+    <main>
+        <!-- Login Section -->
+        <section id="loginSection">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <br>
+                <button type="button" onclick="login()">Login</button>
+                <p><button type="button" id="registerButton" onclick="showRegister()">Register</button></p>
+            </form>
+        </section>
+
+        <!-- Register Section -->
+        <section id="registerSection" style="display: none;">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <label for="registerUsername">Username:</label>
+                <input type="text" id="registerUsername" name="registerUsername" placeholder="Choose a username" required>
+                <br>
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" name="registerPassword" placeholder="Choose a password" required>
+                <br>
+                <p><button type="button" onclick="register()">Register</button></p>
+                <p><button type="button" onclick="goBackToLogin()">Back to Login</button></p>
+            </form>
+        </section>
+
+        <!-- User Dashboard Section -->
+        <section id="userPage" style="display: none;">
+            <h2 id="welcomeMessage">Welcome, User</h2>
+            <p>This is your user page. You can clock in and out below.</p>
+            <p><a href="#" onclick="showSettings()">Settings</a> <button onclick="goBackToLogin()">Back to Login</button></p>
+            <section id="clock-in-out">
+                <button id="clockInBtn">Clock In</button>
+                <button id="clockOutBtn">Clock Out</button>
+            </section>
+            <section id="timesheet">
+                <h3>Timesheet</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Clock In</th>
+                            <th>Clock Out</th>
+                            <th>Total Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timesheetBody">
+                        <!-- Rows for time will be dynamically added here -->
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settingsSection" style="display: none;">
+            <h2>User Settings</h2>
+            <p><strong>Username:</strong> <span id="displayUsername"></span></p>
+            <p><strong>Password:</strong> <span id="displayPassword">****</span></p>
+            <p><button onclick="goBackToDashboard()">Back to Dashboard</button></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Time Tracking System</p>
+    </footer>
+
+    <script src="time.js"></script>
+</body>
+</html>
+
